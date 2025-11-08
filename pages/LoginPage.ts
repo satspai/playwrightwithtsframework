@@ -18,10 +18,10 @@ export class LoginPage {
 
     }
 
-    async loginToOrngeHrm(userNameVal: string, passwordVal: string) {
-        this.userNameTextBox.fill(userNameVal);
-        this.passwordTextBox.fill(passwordVal);
-        this.loginButton.click();
+    async loginApplication(userNameVal: string, passwordVal: string) {
+        await this.userNameTextBox.fill(userNameVal);
+        await this.passwordTextBox.fill(passwordVal);
+        await this.loginButton.click();
     }
 
 } 
