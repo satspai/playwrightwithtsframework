@@ -1,4 +1,5 @@
 import { Locator, Page } from '@playwright/test'
+import CommonUtils from '../utils/CommonUtils';
 
 export class LoginPage {
     readonly page: Page;
@@ -14,13 +15,18 @@ export class LoginPage {
     }
 
     async openApplication () {
-        await this.page.goto('https://saucedemo.com/');
+        
+        await this.page.goto(process.env.BASE_URL);
 
     }
 
-    async loginApplication(userNameVal: string, passwordVal: string) {
-        await this.userNameTextBox.fill(userNameVal);
-        await this.passwordTextBox.fill(passwordVal);
+    async loginApplication() {
+        const commonUtils = new CommonUtils();
+        const decryptUserName = commonUtils.decryptData(process.env.USER_NAME);
+        console.log("Decrypted Username: " + decryptUserName);
+        const decryptPassword = commonUtils.decryptData(process.env.PASSWORD);
+        await this.userNameTextBox.fill(decryptUserName);
+        await this.passwordTextBox.fill(decryptPassword);
         await this.loginButton.click();
     }
 

@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "run_on_test": "cross-env ENCRYPTION_KEY=spai npx playwright test"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -11,5 +13,10 @@
   "devDependencies": {
     "@playwright/test": "^1.56.1",
     "@types/node": "^24.9.2"
+  },
+  "dependencies": {
+    "cross-env": "^10.1.0",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^17.2.3"
   }
 }
