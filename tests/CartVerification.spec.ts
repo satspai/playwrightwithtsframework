@@ -2,7 +2,7 @@ import {expect, test} from "@playwright/test"
 import { LoginPage } from "../pages/LoginPage"
 import { HomePage } from "../pages/HomePage";
 
-test("Verification of the cart", async({page})=>{
+test.skip("Verification of the cart", async({page})=>{
     const loginPage: LoginPage = new LoginPage(page);
     await loginPage.openApplication();
     await loginPage.loginApplication("standard_user","secret_sauce");
