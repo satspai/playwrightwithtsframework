@@ -19,4 +19,3 @@ export const test = basetest.extend<myPOMFixtures>({
      }
 )
 
-export {expect} from "@playwright/test";

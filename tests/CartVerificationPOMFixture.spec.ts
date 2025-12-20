@@ -1,4 +1,4 @@
-import {expect, test} from "../fixtures/POMFixtures"
+import {expect, test} from "../fixtures/UtilsFixtures"
 
 test("Cart verification using page fixtures", async({page, loginPage, homePage})=>{
     await loginPage.openApplication();
